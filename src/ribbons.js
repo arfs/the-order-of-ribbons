@@ -7,15 +7,15 @@ class Ribbons {
     getRibbonOrder() {
         let topmostRowIndex = this.getTopmostRibbonRow();
         let topmostColumnIndex = this.getTopmostRibbonColumn();
-        let order = [];
+        let order = '';
 
         while((topmostRowIndex > -1) || (topmostColumnIndex > -1)) {
             if(topmostRowIndex > -1) {
-                order.unshift(this.ribbonTable[topmostRowIndex].charAt(0));
+                order = this.ribbonTable[topmostRowIndex].charAt(0) + order;
                 this.popRibbonRow(topmostRowIndex);
             }
             else {
-                order.unshift(this.ribbonTable[0].charAt(topmostColumnIndex));
+                order = this.ribbonTable[0].charAt(topmostColumnIndex) + order;
                 this.popRibbonColumn(topmostColumnIndex);
             }
 
@@ -23,7 +23,7 @@ class Ribbons {
             topmostColumnIndex = this.getTopmostRibbonColumn();
         }
 
-        return order.join('');
+        return order;
     }
 
     getTopmostRibbonRow() {
