@@ -2,6 +2,7 @@ class Ribbons {
     constructor(ribbonTable) {
         this.TABLE_SIZE = ribbonTable.length;
         this.ribbonTable = ribbonTable;
+        this.isFilledWithRibbon = Ribbons.isFilledWithRibbon;
     }
 
     getRibbonOrder() {
@@ -104,11 +105,11 @@ class Ribbons {
         }
     }
 
-    isFilledWithRibbon(str) {
+    static isFilledWithRibbon(str) {
         let result = false;
         let char = str.charAt(0);
 
-        if((char !== '.') && (str === char.repeat(this.TABLE_SIZE))) {
+        if((char !== '.') && (str === char.repeat(str.length))) {
             result = true;
         }
 

@@ -2,13 +2,11 @@ const Ribbons = require('./ribbons');
 
 describe('Ribbons tests', () => {
     it('should recognize that the string is filled with a pattern', function() {
-        let ribbons = new Ribbons(new Array(11));
-        expect(ribbons.isFilledWithRibbon('11111111111')).toBe(true);
+        expect(Ribbons.isFilledWithRibbon('11111111111')).toBe(true);
     });
 
     it('should recognize that the string is NOT filled with a pattern', function() {
-        let ribbons = new Ribbons(new Array(11));
-        expect(ribbons.isFilledWithRibbon('11122111311')).toBe(false);
+        expect(Ribbons.isFilledWithRibbon('11122111311')).toBe(false);
     });
 
     it('should recognize rowIndex 5 as the topmost ribbon row', function() {
