@@ -1,0 +1,24 @@
+{
+  "name": "ribbons",
+  "version": "1.0.0",
+  "description": "Solution with unit tests for code kata https://www.codewars.com/kata/5a4adff7e626c53463000015",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "grunt": "^1.0.3",
+    "grunt-commands": "^0.1.8",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-shell": "^2.1.0",
+    "jasmine": "^3.3.0"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node index.js",
+    "test": "jasmine src/ribbons.spec.js",
+    "tdd": "grunt",
+    "lint": "eslint ./src"
+  },
+  "author": "Allan Siongco",
+  "license": "ISC"
+}
